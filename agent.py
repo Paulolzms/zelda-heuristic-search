@@ -8,28 +8,16 @@ DUNGEON_ENTRANCES = {
   'dungeon3.txt': (2, 25)
 }
 
-# DUNGEON_EXITS = {
-#   'dungeon1.txt': (27, 15), 
-#   'dungeon2.txt': (26, 14), 
-#   'dungeon3.txt': (26, 15)  
-# }
-
 DUNGEON_EXITS = {
   'dungeon1.txt': (27, 15), 
-  'dungeon2.txt': (27, 15), 
-  'dungeon3.txt': (27, 15)  
+  'dungeon2.txt': (26, 14), 
+  'dungeon3.txt': (26, 15)  
 }
-
-# DUNGEON_PINGS = {
-#   'dungeon1.txt': (4, 14), 
-#   'dungeon2.txt': (3, 14), 
-#   'dungeon3.txt': (20, 16) 
-# }
 
 DUNGEON_PINGS = {
   'dungeon1.txt': (4, 14), 
-  'dungeon2.txt': (4, 14), 
-  'dungeon3.txt': (4, 14) 
+  'dungeon2.txt': (3, 14), 
+  'dungeon3.txt': (20, 16) 
 }
 
 def journey(mapa, order):
@@ -94,13 +82,13 @@ def dungeon_path_cost(dungeon_file):
   ping_pos = DUNGEON_PINGS[dungeon_file]
 
   # Busca o caminho da entrada para o pingente
-  path_to_ping, cost_to_ping = search_a_star(dungeon_map, dungeon_exits_pos, ping_pos)
+  _, cost_to_ping = search_a_star(dungeon_map, dungeon_exits_pos, ping_pos)
   if cost_to_ping == float('inf'):
     print("Erro: Não foi possível encontrar o caminho da entrada para o pingente.")
     return float('inf')
 
   # Busca o caminho do pingente para a saída
-  path_to_exit, cost_to_exit = search_a_star(dungeon_map, ping_pos, dungeon_exits_pos)
+  _, cost_to_exit = search_a_star(dungeon_map, ping_pos, dungeon_exits_pos)
   if cost_to_exit == float('inf'):
     print("Erro: Não foi possível encontrar o caminho do pingente para a saída.")
     return float('inf')
