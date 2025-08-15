@@ -14,7 +14,7 @@ def neighbors_allowed(mapa, pos):
   neighbors = []
   for dx, dy in MOVS:
     nx, ny = x + dx, y + dy
-    if 0 <= nx < rows and 0 <= ny < cols:
+    if 0 <= nx <= rows and 0 <= ny <= cols:
       neighbors.append((nx, ny))
   return neighbors
 

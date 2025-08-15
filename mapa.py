@@ -14,7 +14,7 @@ def load_map(path):
   
 def land_cost(mapa, pos):
   x, y = pos
-  letter = mapa[x][y]
+  letter = mapa[x - 1][y - 1]
   return LAND_COSTS.get(letter, float('inf'))
 
 def show_map(mapa):
