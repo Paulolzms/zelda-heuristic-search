@@ -32,14 +32,14 @@ Certifique-se de que a estrutura de pastas e arquivos seja a seguinte:
 ```
 zelda-heuristic-search/
 ├──docs/    # Documentação
-│   └── util.py
-├── src/    
+│   └── Trabalho - Busca Heurística.pdf
+├── src/    # Código Fonte
 │   ├── agent.py 
 │   ├── app.py 
 │   ├── mapa.py 
 │   ├── search_a_star.py 
 │   └── util.py
-├── maps/    
+├── maps/    # Dados do Problema
 │   ├── dungeon1.txt
 │   ├── dungeon2.txt
 │   ├── dungeon3.txt
