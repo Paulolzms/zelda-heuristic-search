@@ -49,7 +49,7 @@ Para iniciar a jornada, basta executar o arquivo `app.py` a partir do terminal:
 ```sh
 python app.py
 ```
-### 4. Descrição dos Arquivos
+### 📝 Descrição dos Arquivos
 
 * **agent.py**: Contém a lógica principal do agente, incluindo as funções para calcular a melhor ordem de visita às masmorras (best_order) e construir o caminho completo (get_full_path). É o arquivo principal a ser executado.
 
