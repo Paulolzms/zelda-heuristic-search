@@ -6,6 +6,8 @@ Este projeto implementa um agente autônomo para resolver o problema de busca he
 
 O desafio consiste em encontrar a melhor rota para visitar as masmorras e chegar ao destino final, considerando os diferentes custos de locomoção por terreno.
 
+---
+
 ## 📦 Algoritmo e Funcionalidades
 
 O projeto utiliza o algoritmo de busca heurística **A\*** para calcular a rota de menor custo. As principais funcionalidades implementadas são:
@@ -16,6 +18,8 @@ O projeto utiliza o algoritmo de busca heurística **A\*** para calcular a rota 
 * **Visualização no Console**: Uma interface simples que desenha o mapa no console e atualiza o movimento do agente em tempo real, deixando um rastro do caminho percorrido.
 * **Mapas Configuráveis**: Os mapas podem ser facilmente editados em arquivos de texto.
 * **Relatórios de Custo**: O programa exibe o custo do caminho percorrido e o custo total da jornada.
+
+---
 
 ## ▶️ Como Rodar o Projeto
 
@@ -28,14 +32,14 @@ Certifique-se de que a estrutura de pastas e arquivos seja a seguinte:
 ```
 zelda-heuristic-search/
 ├──docs/    # Documentação
-│   └── util.py
-├── src/    
+│   └── Trabalho - Busca Heurística.pdf
+├── src/    # Código Fonte
 │   ├── agent.py 
 │   ├── app.py 
 │   ├── mapa.py 
 │   ├── search_a_star.py 
 │   └── util.py
-├── maps/    
+├── maps/    # Dados do Problema
 │   ├── dungeon1.txt
 │   ├── dungeon2.txt
 │   ├── dungeon3.txt
@@ -49,6 +53,9 @@ Para iniciar a jornada, basta executar o arquivo `app.py` a partir do terminal:
 ```sh
 python app.py
 ```
+
+---
+
 ### 📝 Descrição dos Arquivos
 
 * **agent.py**: Contém a lógica principal do agente, incluindo as funções para calcular a melhor ordem de visita às masmorras (best_order) e construir o caminho completo (get_full_path). É o arquivo principal a ser executado.
@@ -63,11 +70,15 @@ python app.py
 
 * **maps/dungeon1.txt, maps/dungeon2.txt, maps/dungeon3.txt**: Representações dos mapas das masmorras, em matrizes de 28x28.
 
-### 👨‍💻 Autor
+---
 
-Paulo Luiz M. Souza
-Universidade Federal de Ouro Preto
+## 👨‍💻 Autor
+
+**Paulo Luiz M. Souza**  
+Universidade Federal de Ouro Preto  
 João Monlevade - MG - Brasil
+
+---
 
 ### 📃 Licença
 
