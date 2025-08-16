@@ -1,10 +1,10 @@
 from mapa import load_map, animate_path
 from search_a_star import search_a_star
-from agent import best_order, get_full_path, DUNGEON_EXITS, DUNGEON_PINGS
-from util import INITIAL_POSITION, FINAL_POSITION
+from agent import best_order, get_full_path
+from util import INITIAL_POSITION, FINAL_POSITION, DUNGEON_EXITS, DUNGEON_PINGS
 
 def main():
-  mapa = load_map("mapa_principal.txt")
+  mapa = load_map("hylure_map.txt")
 
   print("Calculando a melhor sequência de masmorras...")
   best_order_result, best_cost = best_order(mapa)
@@ -42,7 +42,7 @@ def main():
         print(f"\nCusto da ida e volta da masmorra {i}: {oneway_cost + return_cost}")
       else:
         print("Não foi possível encontrar o caminho da jornada.")
-        
+
     i += 1
 
 if __name__ == "__main__":

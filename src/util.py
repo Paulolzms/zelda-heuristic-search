@@ -1,6 +1,24 @@
 INITIAL_POSITION = (28,25)
 FINAL_POSITION = (6,7)
 
+DUNGEON_ENTRANCES = {
+  'dungeon1.txt': (33, 6),
+  'dungeon2.txt': (18, 40),
+  'dungeon3.txt': (2, 25)
+}
+
+DUNGEON_EXITS = {
+  'dungeon1.txt': (27, 15), 
+  'dungeon2.txt': (26, 14), 
+  'dungeon3.txt': (26, 15)  
+}
+
+DUNGEON_PINGS = {
+  'dungeon1.txt': (4, 14), 
+  'dungeon2.txt': (3, 14), 
+  'dungeon3.txt': (20, 16) 
+}
+
 MOVS = [
   (-1, 0),
   (1, 0),

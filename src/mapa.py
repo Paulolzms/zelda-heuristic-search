@@ -1,6 +1,8 @@
 import time
 import os
 
+MAPS_FOLDER = 'maps'
+
 LAND_COSTS = {
   'G': 10,
   'A': 20,
@@ -11,7 +13,8 @@ LAND_COSTS = {
   'X': float('inf')
 }
 
-def load_map(path):
+def load_map(file_name):
+  path = os.path.join(MAPS_FOLDER, file_name)
   with open(path, 'r') as f:
     lines = f.read().splitlines()
     mapa = [list(line.strip()) for line in lines if line.strip()]

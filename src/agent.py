@@ -1,24 +1,6 @@
 from search_a_star import search_a_star
 from mapa import load_map
-from util import INITIAL_POSITION, FINAL_POSITION
-
-DUNGEON_ENTRANCES = {
-  'dungeon1.txt': (33, 6),
-  'dungeon2.txt': (18, 40),
-  'dungeon3.txt': (2, 25)
-}
-
-DUNGEON_EXITS = {
-  'dungeon1.txt': (27, 15), 
-  'dungeon2.txt': (26, 14), 
-  'dungeon3.txt': (26, 15)  
-}
-
-DUNGEON_PINGS = {
-  'dungeon1.txt': (4, 14), 
-  'dungeon2.txt': (3, 14), 
-  'dungeon3.txt': (20, 16) 
-}
+from util import INITIAL_POSITION, FINAL_POSITION, DUNGEON_ENTRANCES, DUNGEON_EXITS, DUNGEON_PINGS
 
 def journey(mapa, order):
   total_cost = 0
