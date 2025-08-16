@@ -11,7 +11,6 @@ def main():
 
   # Visualização animada
   if best_order_result:
-    print("\n\nVisualizando o caminho da jornada:")
     best_path_result = get_full_path(mapa, best_order_result)
     if best_path_result:
       animate_path(mapa, best_path_result, INITIAL_POSITION, FINAL_POSITION)
@@ -24,10 +23,12 @@ def main():
   print(f"A melhor sequência de masmorras é: {best_order_result}")
   print(f"O custo total da jornada é: {best_cost}")
 
-  choice = input("\\nDeseja visualizar os caminhos dentro das masmorras? (s/n): ").lower()
-  
-  if choice == 's':
-    for dungeon_file in best_order_result:
+
+  print("\n--- Visualização dentro das Masmorras ---")
+  i = 1
+  for dungeon_file in best_order_result:
+    choice = input(f"\nDeseja visualizar os caminhos dentro da masmorra {i}? (s/n): ").lower()
+    if choice == 's':
       dungeon_map = load_map(dungeon_file)
       dungeon_exit = DUNGEON_EXITS[dungeon_file]
       ping_pos = DUNGEON_PINGS[dungeon_file]
@@ -37,20 +38,12 @@ def main():
 
       if path_to_ping and path_back:
         full_dungeon_path = path_to_ping + path_back
-
-        print("\n\nVisualizando o caminho da jornada:")
-        if full_dungeon_path:
-          animate_path(dungeon_map, full_dungeon_path, DUNGEON_EXITS[dungeon_file], DUNGEON_PINGS[dungeon_file])
-          print(f"\nCusto da ida e volta da masmorra {dungeon_file}: {oneway_cost + return_cost}")
-          choice = input("\n\nDeseja visualizar os caminhos dentro das outras masmorras? (s/n): ").lower()
-          if choice == 's':
-            continue
-          else:
-            break
-        else:
-          print("Não foi possível encontrar o caminho da jornada.")
-
-
+        animate_path(dungeon_map, full_dungeon_path, DUNGEON_EXITS[dungeon_file], DUNGEON_EXITS[dungeon_file])
+        print(f"\nCusto da ida e volta da masmorra {i}: {oneway_cost + return_cost}")
+      else:
+        print("Não foi possível encontrar o caminho da jornada.")
+        
+    i += 1
 
 if __name__ == "__main__":
   main()

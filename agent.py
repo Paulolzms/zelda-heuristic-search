@@ -76,18 +76,17 @@ def journey(mapa, order):
   
   return total_cost
 
+# Encontra o custo da masmorra
 def dungeon_path_cost(dungeon_file):
   dungeon_map = load_map(dungeon_file)
   dungeon_exits_pos = DUNGEON_EXITS[dungeon_file]
   ping_pos = DUNGEON_PINGS[dungeon_file]
 
-  # Busca o caminho da entrada para o pingente
   _, cost_to_ping = search_a_star(dungeon_map, dungeon_exits_pos, ping_pos)
   if cost_to_ping == float('inf'):
     print("Erro: Não foi possível encontrar o caminho da entrada para o pingente.")
     return float('inf')
 
-  # Busca o caminho do pingente para a saída
   _, cost_to_exit = search_a_star(dungeon_map, ping_pos, dungeon_exits_pos)
   if cost_to_exit == float('inf'):
     print("Erro: Não foi possível encontrar o caminho do pingente para a saída.")
@@ -109,6 +108,7 @@ def best_order(mapa):
 
   return best_order, best_cost
 
+# Permutação da ordem das masmorras
 def permutations(elements):
   if len(elements) == 0:
     return []
