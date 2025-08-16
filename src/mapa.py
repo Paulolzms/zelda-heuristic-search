@@ -14,7 +14,7 @@ LAND_COSTS = {
 }
 
 def load_map(file_name):
-  path = os.path.join(MAPS_FOLDER, file_name)
+  path = os.path.join(os.pardir, MAPS_FOLDER, file_name)
   with open(path, 'r') as f:
     lines = f.read().splitlines()
     mapa = [list(line.strip()) for line in lines if line.strip()]
