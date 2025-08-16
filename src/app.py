@@ -25,9 +25,8 @@ def main():
 
 
   print("\n--- Visualização dentro das Masmorras ---")
-  i = 1
-  for dungeon_file in best_order_result:
-    choice = input(f"\nDeseja visualizar os caminhos dentro da masmorra {i}? (s/n): ").lower()
+  for i, dungeon_file in enumerate(best_order_result):
+    choice = input(f"\nDeseja visualizar os caminhos dentro da masmorra {i + 1}? (s/n): ").lower()
     if choice == 's':
       dungeon_map = load_map(dungeon_file)
       dungeon_exit = DUNGEON_EXITS[dungeon_file]
@@ -43,7 +42,6 @@ def main():
       else:
         print("Não foi possível encontrar o caminho da jornada.")
 
-    i += 1
 
 if __name__ == "__main__":
   main()

@@ -1,6 +1,6 @@
 from search_a_star import search_a_star
 from mapa import load_map
-from util import INITIAL_POSITION, FINAL_POSITION, MASTER_SWORD_POSITION, DUNGEON_ENTRANCES, DUNGEON_EXITS, DUNGEON_PINGS
+from util import INITIAL_POSITION, FINAL_POSITION, DUNGEON_ENTRANCES, DUNGEON_EXITS, DUNGEON_PINGS, MASTER_SWORD_POSITION
 
 def journey(mapa, order):
   total_cost = 0
@@ -49,7 +49,6 @@ def journey(mapa, order):
   last_dungeon = order[-1]
   last_entrance = DUNGEON_ENTRANCES[last_dungeon]
   _, final_travel_cost = search_a_star(mapa, last_entrance, FINAL_POSITION)
-  
   if final_travel_cost == float('inf'):
       print(f"Erro: Não foi possível encontrar um caminho de {last_dungeon} ({last_entrance}) para Lost Woods ({FINAL_POSITION}).")
       return float('inf')

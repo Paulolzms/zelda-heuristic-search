@@ -32,13 +32,12 @@ def show_map(mapa):
 def clear_console():
   os.system('cls' if os.name == 'nt' else 'clear')
 
-def animate_path(mapa, path, start_pos, end_pos, delay=0.1):
+def animate_path(mapa, path, start_pos, end_pos, delay=0.05):
   start = (start_pos[0] - 1, start_pos[1] - 1)
   end = (end_pos[0] - 1, end_pos[1] - 1)
-  original_map = [row[:] for row in mapa]
   
   # Cria o mapa de exibição para manter o rastro
-  display_map = [row[:] for row in original_map]
+  display_map = [row[:] for row in mapa]
   
   # Marca os pontos de início e fim
   display_map[start[0]][start[1]] = 'S'
@@ -54,6 +53,6 @@ def animate_path(mapa, path, start_pos, end_pos, delay=0.1):
     show_map(display_map)
     time.sleep(delay)
     
-    # Depois do atraso, muda o 'L' para '-' para deixar o rastro
-    display_map[step[0] - 1][step[1] - 1] = '-'
+    # Depois do atraso, muda o 'L' para ' ' para deixar o rastro
+    display_map[step[0] - 1][step[1] - 1] = ' '
   
