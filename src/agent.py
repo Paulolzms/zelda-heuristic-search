@@ -1,6 +1,6 @@
 from search_a_star import search_a_star
 from mapa import load_map
-from util import INITIAL_POSITION, FINAL_POSITION, DUNGEON_ENTRANCES, DUNGEON_EXITS, DUNGEON_PINGS, MASTER_SWORD_POSITION
+from util import INITIAL_POSITION, FINAL_POSITION, DUNGEON_ENTRANCES, DUNGEON_EXITS, DUNGEON_PINGS
 
 def journey(mapa, order):
   total_cost = 0
