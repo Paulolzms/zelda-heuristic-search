@@ -1,6 +1,6 @@
 from search_a_star import search_a_star
 from mapa import load_map
-from util import INITIAL_POSITION, FINAL_POSITION, DUNGEON_ENTRANCES, DUNGEON_EXITS, DUNGEON_PINGS, MASTER_SWORD_POSITION
+from util import INITIAL_POSITION, FINAL_POSITION, DUNGEON_ENTRANCES, DUNGEON_EXITS, DUNGEON_PINGS
 
 def journey(mapa, order):
   total_cost = 0
@@ -83,6 +83,7 @@ def best_order(mapa):
 
   for order in permutations(dungeons):
     cost = journey(mapa, order)
+    print(f"Ordem: {order}, Custo: {cost}")
     if cost < best_cost:
       best_cost = cost
       best_order = order

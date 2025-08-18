@@ -8,6 +8,7 @@ def main():
 
   print("Calculando a melhor sequência de masmorras...")
   best_order_result, best_cost = best_order(mapa)
+  input("Pressione Enter para continuar...")
 
   # Visualização animada
   if best_order_result:
